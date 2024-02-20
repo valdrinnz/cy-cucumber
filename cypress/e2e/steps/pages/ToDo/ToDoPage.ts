@@ -27,4 +27,8 @@ export default class ToDoPage {
     whatNeedsToBeDoneInput() : void {
         cy.get(this.INPUT).should('be.visible')
     }
+
+    typeTextInInput(text : string): void {
+        cy.get(this.INPUT).type(text)
+    }
 }

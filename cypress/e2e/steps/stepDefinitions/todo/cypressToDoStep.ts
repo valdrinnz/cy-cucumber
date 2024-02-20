@@ -23,8 +23,27 @@ Then('I see text "2 items left"', function () {
   this.todo_page.toDoCount('2 items left')
 })
 
-When('I find element by placeholder text "What needs to be done?"', function() {
+When('I find element by data test "new-todo"', function() {
   this.todo_page.whatNeedsToBeDoneInput()
 })
+
+Then('I type "Feed the cat"', function () {
+  this.todo_page.typeTextInInput("Feed the cat")
+})
+
+Then(`I type "enter"`, function () {
+  this.todo_page.typeTextInInput('{enter}')
+})
+
+Then(`I see label "Feed the cat"`, function () {
+  this.todo_page.verifyItemsInList(2, 'Feed the cat')
+})
+
+Then(`I see text "3 items left"`, function () {
+  this.todo_page.toDoCount('3 items left')
+})
+
+
+
 
 
