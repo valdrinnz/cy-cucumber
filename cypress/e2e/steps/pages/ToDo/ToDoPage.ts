@@ -2,7 +2,7 @@ export default class ToDoPage {
 
     private readonly TO_DO_HEADING_LOCATOR = '.todo-list li'
     private readonly TO_DO_COUNT = '.todo-count'
-    private readonly INPUT = '[data-test="new-todo"]'
+    private readonly NEW_TODO_INPUT_SELECTOR = '[data-test="new-todo"]'
     private readonly CHECKBOX = 'input[type=checkbox]'
 
     // Visits the home page of the todo application and asserts the URL path
@@ -33,12 +33,12 @@ export default class ToDoPage {
 
     // Finds input field in order to add new to dos
     whatNeedsToBeDoneInput() : void {
-        cy.get(this.INPUT).should('be.visible')
+        cy.get(this.NEW_TODO_INPUT_SELECTOR).should('be.visible')
     }
 
     // Type a  new todo item into the input field
     typeTextInInput(text : string): void {
-        cy.get(this.INPUT).type(text)
+        cy.get(this.NEW_TODO_INPUT_SELECTOR).type(text)
     }
 
     // Finds Element by label and assert it by visibility
