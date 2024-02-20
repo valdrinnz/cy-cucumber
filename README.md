@@ -60,7 +60,7 @@ npm run lint:eslint
 
 ## Test Strategy
 
-Our test strategy focuses on verifying the functionality of a todo list web application using Cypress and Cucumber. The chosen application, represented by the Cypress todo feature, demonstrates key interactions such as displaying default todo items, adding new todo items, and checking off completed items. 
+Our test strategy focuses on verifying the functionality of a todo list [Cypress Examples - To Do, Web Application](https://example.cypress.io/todo) using Cypress and Cucumber. The chosen application, represented by the Cypress todo feature, demonstrates key interactions such as displaying default todo items, adding new todo items, and checking off completed items. 
 
 ## Test Cases
 Choice of Test Cases:
