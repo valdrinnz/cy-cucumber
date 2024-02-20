@@ -7,22 +7,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run Cypress Tests 
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
 
       #Artifacts
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         name: Upload screenshots in case of fail
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         name: Upload videos in case of failure
         if: failure()
         with:
           name: cypress-videos
+          path: cypress
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-cucumber-report
           path: cypress
