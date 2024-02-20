@@ -8,12 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/valdrinnz/cy-cucumber.git"
+    "url": "https://github.com/valdrinnz/cy-cucumber.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/valdrinnz/cy-cucumber/issues"
   },
-  "homepage": "https://github.com/valdrinnz/cy-cucumber#readme"
+  "homepage": "https://github.com/valdrinnz/cy-cucumber#readme",
+  "devDependencies": {
+    "cypress": "^13.6.4"
+  }
 }
