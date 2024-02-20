@@ -2,7 +2,7 @@ export default class ToDoPage {
 
     private readonly TO_DO_HEADING_LOCATOR = '.todo-list li'
     private readonly TO_DO_COUNT = '.todo-count'
-    private readonly INPUT = 'input[placeholder="What needs to be done?"]'
+    private readonly INPUT = '[data-test="new-todo"]'
 
     openHomePage(): void {
         cy.visit('/todo')
