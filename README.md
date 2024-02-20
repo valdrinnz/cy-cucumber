@@ -46,6 +46,17 @@ Make sure you have configured right your git account and you have the following 
  docker run my-cypress-tests
  ```
 
+**HTML report**:
+
+![Output](./report/images/report_html.png "Report")
+### Find Problems
+
+ESLint statically analyzes the code to find problems.
+
+```bash
+npm run lint:eslint
+```
+
 ## Test Strategy
 
 Our test strategy focuses on verifying the functionality of a todo list web application using Cypress and Cucumber. The chosen application, represented by the Cypress todo feature, demonstrates key interactions such as displaying default todo items, adding new todo items, and checking off completed items. 
