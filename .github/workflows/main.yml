@@ -29,5 +29,5 @@ jobs:
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-cucumber-report
-          path: cypress
+          name: cypress-reports
+          path: cypress/reports/cucumber-report.html
