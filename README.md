@@ -64,7 +64,7 @@ Choice of Test Cases:
 ### Scenario: Can check off an item as completed
 #### Description: Tests the ability to mark a todo item as completed by checking off the corresponding checkbox. After marking done a todo, we can see that we have left one more to do remaining.
 
-### Test Case Files:
+#### Test Case Files:
 #### Feature File: 
  ```bash
 cypressToDo.feature located in the e2e/features directory.
