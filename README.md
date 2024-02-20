@@ -91,3 +91,8 @@ cypressToDoStep.ts located in the e2e/steps/stepDefinition/todo directory.
 ToDoPage.ts located in the e2e/steps/pages/ToDo directory.
  ```
 ## Assumptions and Decisions:
+We assume that the provided test scenarios encompass the critical functionality of the todo application. These scenarios were carefully selected to cover key user interactions and verify essential features of the application.
+
+#### Decisions
+The decision to use Cypress and Cucumber for test automation was based on their capabilities to provide a robust and maintainable testing framework. Cypress offers powerful features for end-to-end testing, while Cucumber enhances test readability and collaboration through its natural language syntax.
+These assumptions and decisions guide the approach taken in developing and maintaining the test suite for the todo application. They underscore the importance of stability, efficiency, collaboration, and the choice of testing tools in ensuring the effectiveness of the testing process.
