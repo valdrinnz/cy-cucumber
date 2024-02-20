@@ -43,6 +43,26 @@ Then(`I see text "3 items left"`, function () {
   this.todo_page.toDoCount('3 items left')
 })
 
+When('I find element by label text "Walk the dog"', function () {
+  this.todo_page.findElementByLabelText('Walk the dog')
+})
+
+Then(`I find closest element ".view"`, function () {
+  this.todo_page.getViewButton('Walk the dog')
+})
+
+Then(`I find element by selector "input[type='checkbox']"`, function () {
+  this.todo_page.findCheckBox()
+})
+
+Then('I click', function () {
+  this.todo_page.clickCheckbox()
+})
+
+Then(`I see text "1 item left"`, function () {
+  this.todo_page.toDoCount('1 item left')
+})
+
 
 
 
