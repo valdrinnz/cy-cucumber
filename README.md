@@ -47,6 +47,7 @@ Make sure you have configured right your git account and you have the following 
  ```
 
 **HTML report**:
+HTML Report is generated after you  run `npx cypress run` command, it can be found at root directory with this name: cucumber-report.html
 
 ![Output](./report/images/report_html.png "Report")
 ### Find Problems
