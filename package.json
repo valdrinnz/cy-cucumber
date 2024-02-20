@@ -19,6 +19,8 @@
   "homepage": "https://github.com/valdrinnz/cy-cucumber#readme",
   "devDependencies": {
     "cypress": "^13.6.4",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@cypress/browserify-preprocessor": "latest"
   }
 }
