@@ -31,7 +31,7 @@ export default class ToDoPage {
         cy.get(this.TO_DO_COUNT).should('contain', text)
     }
 
-    // Finds and clicks on the checkbox for the last todo item
+    // Finds input field in order to add new to dos
     whatNeedsToBeDoneInput() : void {
         cy.get(this.INPUT).should('be.visible')
     }
