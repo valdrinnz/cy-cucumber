@@ -26,7 +26,7 @@ Make sure you have configured right your git account and you have the following 
  ```bash
  npm install
  ```
- #### How to run the tests
+## How to run the tests
  ```bash
  npx cypress open
  ```
@@ -46,11 +46,11 @@ Make sure you have configured right your git account and you have the following 
  docker run my-cypress-tests
  ```
 
- ## Test Strategy
+## Test Strategy
 
 Our test strategy focuses on verifying the functionality of a todo list web application using Cypress and Cucumber. The chosen application, represented by the Cypress todo feature, demonstrates key interactions such as displaying default todo items, adding new todo items, and checking off completed items. 
 
- ## Test Cases
+## Test Cases
 Choice of Test Cases:
 
 ### Scenario: Displays two todo items by default
