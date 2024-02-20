@@ -36,7 +36,7 @@ export default class ToDoPage {
         cy.contains(text).should('be.visible')
     }
 
-    findClosestElement(element: any) : void {
+    findClosestElement(element: string) : void {
         cy.get(element).parent()
     }
 
