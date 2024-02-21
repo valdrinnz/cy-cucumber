@@ -60,7 +60,31 @@ npm run lint:eslint
 
 ## Test Strategy
 
-Our test strategy focuses on verifying the functionality of a todo list [Cypress Examples - To Do, Web Application](https://example.cypress.io/todo) using Cypress and Cucumber. The chosen application, represented by the Cypress todo feature, demonstrates key interactions such as displaying default todo items, adding new todo items, and checking off completed items. 
+Our test strategy focuses on verifying the functionality of a todo list [Cypress Examples - To Do, Web Application](https://example.cypress.io/todo) using Cypress and Cucumber. The chosen application, represented by the Cypress todo feature, demonstrates key interactions such as displaying default todo items, adding new todo items, and checking off completed items. This one is just a completed part of a test strategy, The following testing practices needs to be performed: 
+#### Add new test cases for user stories
+#### Test bugs that are fixed
+#### Execute Unit testing (backend and front end)
+#### Execute Integration testing (backend and front end)
+#### Execute Regression testing (Cypress for the features that are automated), manual testing for the features that are not automated
+#### Execute Smoke Testing 
+
+Other important practices for a robust test strategy are: 
+#### Testing Approach:
+#### Test Environment:
+#### Documentation:
+#### QA Sign Off
+#### Metrics and reporting 
+#### Compliance and Standards
+
+### So far in this solution we have covered:
+#### Objective:
+Our test strategy aims to ensure the reliability and functionality of a todo list web application by thoroughly testing key interactions using Cypress and Cucumber.
+#### Application Under Test:
+The application chosen for testing is a todo list web application, available at [Cypress Examples - To Do, Web Application](https://example.cypress.io/todo) This application serves as the basis for our test scenarios.
+#### E2E Test Cases with Cypress and Cucumber
+#### CI/CD Integration
+#### Documentation
+ 
 
 ## Test Cases
 Choice of Test Cases:
