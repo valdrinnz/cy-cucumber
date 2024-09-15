@@ -4,10 +4,10 @@ export default class ToDoPage {
     private readonly TO_DO_COUNT = '.todo-count'
     private readonly NEW_TODO_INPUT_SELECTOR = '[data-test="new-todo"]'
     private readonly CHECKBOX = 'input[type=checkbox]'
-    private readonly TEST = Cypress.env('test')
-    private readonly FIRST = Cypress.env('first')
-    private readonly SECOND = Cypress.env('second')
-    private readonly THIRD = Cypress.env('third')
+    private readonly testVar = Cypress.env('test');
+    private readonly firstVar = Cypress.env('first');
+    private readonly secondVar = Cypress.env('second');
+    private readonly thirdVar = Cypress.env('third');
 
 
     // Visits the home page of the todo application and asserts the URL path
@@ -72,12 +72,10 @@ export default class ToDoPage {
     // Clicks in last checkbox
     clickCheckbox() {
         cy.get(this.CHECKBOX).last().click({force:true})
-        cy.log(this.TEST);
-        cy.log(this.FIRST);
-        cy.log('');
-        cy.log(this.SECOND);
-        cy.log('');
-        cy.log(this.THIRD);
+        cy.log(`TEST variable: ${this.testVar}`);
+        cy.log(`FIRST variable: ${this.firstVar}`);
+        cy.log(`SECOND variable: ${this.secondVar}`);
+        cy.log(`THIRD variable: ${this.thirdVar}`);
         cy.get('#hahaha')
     }
 }

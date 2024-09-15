@@ -14,6 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Debug Environment Variables
+        run: |
+          echo "First: $FIRST"
+          echo "Second: $SECOND"
+          echo "Third: $THIRD"
+          
       - name: Run Cypress Tests 
         uses: cypress-io/github-action@v6
         env:
