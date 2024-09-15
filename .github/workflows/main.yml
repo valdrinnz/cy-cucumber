@@ -9,6 +9,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    environment: Budapest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
