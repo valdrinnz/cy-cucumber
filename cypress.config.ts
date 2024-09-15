@@ -24,6 +24,7 @@ export default defineConfig({
         specPattern:                '**/*.feature',
         baseUrl:                    'https://example.cypress.io',
         setupNodeEvents,
+        video: true
     },
 
     env:{
