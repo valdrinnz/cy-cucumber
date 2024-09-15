@@ -14,18 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug Environment Variables
-        run: |
-          echo "First: ${{ github.event.inputs.FIRST }}"
-          echo "Second: ${{ github.event.inputs.SECOND }}"
-          echo "Third: ${{ github.event.inputs.THIRD }}"
-
+          
       - name: Run Cypress Tests 
         uses: cypress-io/github-action@v6
         env:
-          CYPRESS_FIRST: ${{ github.event.inputs.FIRST }}
-          CYPRESS_SECOND: ${{ github.event.inputs.SECOND }}
-          CYPRESS_THIRD: ${{ github.event.inputs.THIRD }}
+          CYPRESS_FIRST: ${{ env.FIRST }}
+          CYPRESS_SECOND: ${{ env.SECOND }}
+          CYPRESS_THIRD: ${{ env.THIRD }}
 
       #Artifacts
       - uses: actions/upload-artifact@v4
