@@ -25,4 +25,8 @@ export default defineConfig({
         baseUrl:                    'https://example.cypress.io',
         setupNodeEvents,
     },
+
+    env:{
+        test: process.env.CYPRESS_TEST,
+    }
 })

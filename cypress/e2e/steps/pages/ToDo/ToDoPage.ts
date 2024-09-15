@@ -4,6 +4,7 @@ export default class ToDoPage {
     private readonly TO_DO_COUNT = '.todo-count'
     private readonly NEW_TODO_INPUT_SELECTOR = '[data-test="new-todo"]'
     private readonly CHECKBOX = 'input[type=checkbox]'
+    private readonly TEST = Cypress.env('test')
 
     // Visits the home page of the todo application and asserts the URL path
     openHomePage(): void {
@@ -48,21 +49,40 @@ export default class ToDoPage {
 
     // Find the parent element  of an element 
     findClosestElement(element: string) : void {
+        cy.get(this.CHECKBOX).last().click({force:true})
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
         cy.get(element).parent()
     }
 
     // Finds view button
     getViewButton(text: string) : void {
+        cy.get(this.CHECKBOX).last().click({force:true})
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
         cy.contains(text).parent()
     }
 
     // Finds checkbox
     findCheckBox() {
+        cy.get(this.CHECKBOX).last().click({force:true})
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
         cy.get(this.CHECKBOX)
     }
 
     // Clicks in last checkbox
     clickCheckbox() {
         cy.get(this.CHECKBOX).last().click({force:true})
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
+        cy.log(this.TEST);
     }
 }
