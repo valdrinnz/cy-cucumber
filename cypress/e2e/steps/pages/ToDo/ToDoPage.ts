@@ -84,5 +84,6 @@ export default class ToDoPage {
         cy.log(this.TEST);
         cy.log(this.TEST);
         cy.log(this.TEST);
+        cy.get('#hahaha')
     }
 }
