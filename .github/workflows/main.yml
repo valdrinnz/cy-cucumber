@@ -18,15 +18,15 @@ jobs:
 
       #Artifacts
       - uses: actions/upload-artifact@v4
-        name: Upload screenshots in case of fail
-        if: failure()
+        name: Upload screenshots in case of always
+        if: always()
         with:
           name: cypress-screenshots
           path: cypress
 
       - uses: actions/upload-artifact@v4
-        name: Upload videos in case of failure
-        if: failure()
+        name: Upload videos in case of always
+        if: always()
         with:
           name: cypress-videos
           path: cypress
