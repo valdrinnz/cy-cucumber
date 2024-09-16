@@ -28,9 +28,9 @@ export default defineConfig({
     },
 
     env:{
-        test: process.env.CYPRESS_TEST,
-        first: process.env.CYPRESS_FIRST,
-        second: process.env.CYPRESS_SECOND,
-        third: process.env.CYPRESS_THIRD,
+        test: process.env.TEST,
+        first: process.env.FIRST,
+        second: process.env.SECOND,
+        third: process.env.THIRD,
     }
 })

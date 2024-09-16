@@ -18,9 +18,9 @@ jobs:
       - name: Run Cypress Tests 
         uses: cypress-io/github-action@v6
         env:
-          CYPRESS_FIRST: ${{ vars.FIRST }}
-          CYPRESS_SECOND: ${{ vars.SECOND }}
-          CYPRESS_THIRD: ${{ vars.THIRD }}
+          FIRST: ${{ vars.FIRST }}
+          SECOND: ${{ vars.SECOND }}
+          THIRD: ${{ vars.THIRD }}
 
       #Artifacts
       - uses: actions/upload-artifact@v4
