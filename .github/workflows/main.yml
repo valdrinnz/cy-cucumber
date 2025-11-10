@@ -2,7 +2,7 @@ name: Cypress Tests
 
 on:
   schedule:
-   - cron: "*/5 * * * *"
+    - cron: "*/5 * * * *" # runs every 5 minutes
   workflow_dispatch:
     inputs:
       testType:
@@ -16,10 +16,11 @@ on:
       environment:
         description: 'Choose the environment to run tests on'
         required: true
-        type: environment
+        default: 'development'
       country:
         description: 'Choose the country to run tests'
         required: false
+        default: 'AQ'
         type: choice
         options:
           - AQ
@@ -47,31 +48,19 @@ on:
         default: '3'
 
 jobs:
-  scheduled-test-run:
-      if: github.event_name == 'schedule'
-      runs-on: ubuntu-latest
-      steps:
-        - name: Trigger tests with default values
-          uses: benc-uk/workflow-dispatch@v1
-          with:
-            workflow: Cypress Tests
-            inputs: |
-              {
-                "testType": "e2e",
-                "environment": "development",
-                "country": "AQ",
-                "numberOfBatches": "1",
-                "numberOfFilesPerBatch": "10",
-                "numberOfSGTINs": "10"
-              }
   cypress-run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run Cypress Tests 
+      - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
+        with:
+          command: |
+            echo "Running Cypress tests..."
+            # You can customize this command to use your inputs if needed
+            npx cypress run --env environment=${{ inputs.environment }},country=${{ inputs.country }}
 
       #Artifacts
       - uses: actions/upload-artifact@v4
@@ -87,6 +76,7 @@ jobs:
         with:
           name: cypress-videos
           path: cypress
+
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
