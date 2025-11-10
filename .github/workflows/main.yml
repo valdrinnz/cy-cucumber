@@ -62,13 +62,15 @@ jobs:
             # You can customize this command to use your inputs if needed
             npx cypress run
         env:
-          CYPRESS_ENV: '${{ inputs.environment }}'
-          COUNTRY: '${{ inputs.country }}'
-          NUMBER_OF_BATCHES: ${{ inputs.testType == 'load' && inputs.numberOfBatches || '' }}
-          NUMBER_OF_FILES_PER_BATCH: ${{ inputs.testType == 'load' && inputs.numberOfFilesPerBatch || '' }}
-          NUMBER_OF_STGINS: ${{ inputs.testType == 'load' && inputs.numberOfSGTINs || '' }}
-          WAIT_IN_MINUTES_FOR_UPLOAD_FILES: ${{ inputs.testType == 'load' && inputs.waitInMinutesForUploadFiles || '' }}
-          WAIT_IN_MINUTES_FOR_CLOSURE_FILE: ${{ inputs.testType == 'load' && inputs.waitInMinutesForClosureFile || '' }}
+        # Default to 'load' for scheduled runs, otherwise use user input
+          TEST_TYPE: ${{ (github.event_name == 'schedule' && 'load') || inputs.testType || 'e2e' }}
+          CYPRESS_ENV: ${{ inputs.environment || 'development' }}
+          COUNTRY: ${{ inputs.country || 'AQ' }}
+          NUMBER_OF_BATCHES: ${{ (github.event_name == 'schedule' || inputs.testType == 'load') && (inputs.numberOfBatches || '1') || '' }}
+          NUMBER_OF_FILES_PER_BATCH: ${{ (github.event_name == 'schedule' || inputs.testType == 'load') && (inputs.numberOfFilesPerBatch || '10') || '' }}
+          NUMBER_OF_STGINS: ${{ (github.event_name == 'schedule' || inputs.testType == 'load') && (inputs.numberOfSGTINs || '10') || '' }}
+          WAIT_IN_MINUTES_FOR_UPLOAD_FILES: ${{ (github.event_name == 'schedule' || inputs.testType == 'load') && (inputs.waitInMinutesForUploadFiles || '1') || '' }}
+          WAIT_IN_MINUTES_FOR_CLOSURE_FILE: ${{ (github.event_name == 'schedule' || inputs.testType == 'load') && (inputs.waitInMinutesForClosureFile || '3') || '' }}
 
 
       #Artifacts
