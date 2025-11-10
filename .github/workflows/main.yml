@@ -1,12 +1,69 @@
 name: Cypress Tests
 
-on: 
-  push:
-    branches:
-      - main
+on:
+  schedule:
+   - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      testType:
+        description: 'Choose e2e to run end to end tests, choose load to run load tests'
+        required: false
+        default: 'e2e'
+        type: choice
+        options:
+          - e2e
+          - load
+      environment:
+        description: 'Choose the environment to run tests on'
+        required: true
+        type: environment
+      country:
+        description: 'Choose the country to run tests'
+        required: false
+        type: choice
+        options:
+          - AQ
+          - GL
+          - GP
+      numberOfBatches:
+        description: 'Number of batches (load tests only)'
+        required: false
+        default: '1'
+      numberOfFilesPerBatch:
+        description: 'Number of files per batch (load tests only)'
+        required: false
+        default: '10'
+      numberOfSGTINs:
+        description: 'Number of SGTINs (load tests only)'
+        required: false
+        default: '10'
+      waitInMinutesForUploadFiles:
+        description: 'Wait in minutes for upload files (load tests only)'
+        required: false
+        default: '1'
+      waitInMinutesForClosureFile:
+        description: 'Wait in minutes for closure file (load tests only)'
+        required: false
+        default: '3'
 
 jobs:
+  scheduled-test-run:
+      if: github.event_name == 'schedule'
+      runs-on: ubuntu-latest
+      steps:
+        - name: Trigger tests with default values
+          uses: benc-uk/workflow-dispatch@v1
+          with:
+            workflow: Cypress Tests
+            inputs: |
+              {
+                "testType": "e2e",
+                "environment": "development",
+                "country": "AQ",
+                "numberOfBatches": "1",
+                "numberOfFilesPerBatch": "10",
+                "numberOfSGTINs": "10"
+              }
   cypress-run:
     runs-on: ubuntu-latest
     steps:
