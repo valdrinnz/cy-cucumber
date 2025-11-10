@@ -60,7 +60,16 @@ jobs:
           command: |
             echo "Running Cypress tests..."
             # You can customize this command to use your inputs if needed
-            npx cypress run --env environment=${{ inputs.environment }},country=${{ inputs.country }}
+            npx cypress run
+        env:
+          CYPRESS_ENV: '${{ inputs.environment }}'
+          COUNTRY: '${{ inputs.country }}'
+          NUMBER_OF_BATCHES: ${{ inputs.testType == 'load' && inputs.numberOfBatches || '' }}
+          NUMBER_OF_FILES_PER_BATCH: ${{ inputs.testType == 'load' && inputs.numberOfFilesPerBatch || '' }}
+          NUMBER_OF_STGINS: ${{ inputs.testType == 'load' && inputs.numberOfSGTINs || '' }}
+          WAIT_IN_MINUTES_FOR_UPLOAD_FILES: ${{ inputs.testType == 'load' && inputs.waitInMinutesForUploadFiles || '' }}
+          WAIT_IN_MINUTES_FOR_CLOSURE_FILE: ${{ inputs.testType == 'load' && inputs.waitInMinutesForClosureFile || '' }}
+
 
       #Artifacts
       - uses: actions/upload-artifact@v4
